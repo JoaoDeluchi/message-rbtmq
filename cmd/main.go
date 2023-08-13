@@ -9,18 +9,18 @@ func main() {
 }
 
 func run() error {
-	//configProvider, err := runtime.NewEnv()
-	//if err != nil {
-	//	return err
-	//}
-	//
-	//app, err := apirest.BuildApplication(
-	//	configProvider,
-	//	apirest.BuildRepositories(
-	//		configProvider))
-	//if err != nil {
-	//	return err
-	//}
-	//
-	//return app.Run()
+	configProvider, err := runtime.NewEnv()
+	if err != nil {
+		return err
+	}
+
+	app, err := apirest.BuildApplication(
+		configProvider,
+		apirest.BuildRepositories(
+			configProvider))
+	if err != nil {
+		return err
+	}
+
+	return app.Run()
 }
